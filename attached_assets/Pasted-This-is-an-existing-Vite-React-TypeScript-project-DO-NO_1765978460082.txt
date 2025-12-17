@@ -1,0 +1,132 @@
+This is an existing Vite + React + TypeScript project.
+DO NOT change routing logic, DO NOT add or remove routes.
+Only update existing TSX pages, styles, and shared layout.
+Do NOT delete any files.
+
+==================================================
+1) GLOBAL THEME & COLORS
+==================================================
+
+Update index.css to use a brighter, premium Web3 color palette aligned with the RoboChatty brand.
+
+Primary: #7C5CFF
+Secondary: #00E5FF
+Accent: #FF7AD9
+Dark background: #0B0E1A
+Card background: rgba(255,255,255,0.08)
+
+- Improve contrast without making the site darker
+- Use soft gradients (purple → cyan)
+- Reduce heavy shadows, use subtle glow
+- Buttons should be gradient with smooth hover transitions
+
+==================================================
+2) SOCIAL LINKS (GLOBAL)
+==================================================
+
+Update all social links across the site:
+
+X (Twitter): https://x.com/RoboChaty
+Telegram: https://t.me/robochatybot
+
+Apply in:
+- Footer
+- Any header CTA
+- Litepaper ecosystem section
+
+==================================================
+3) LITEPAPER PAGE (litepaper.tsx)
+==================================================
+
+Replace ONLY the content inside litepaper.tsx.
+Keep layout, structure, and components.
+Do NOT change routing.
+
+Use the following English content EXACTLY, no additions or removals:
+
+[PASTE THE FULL LITEPAPER ENGLISH TEXT YOU PROVIDED]
+
+==================================================
+4) SNIPE BOT PAGE (snipe-bot.tsx)
+==================================================
+
+Keep the existing "COMING SOON" section.
+Below it, add a new content section.
+
+Title: AI Snipe Mode
+
+Content:
+The biggest gains in crypto markets often happen at the exact moment a new project launches or during unexpected pumps. However, catching these opportunities manually is nearly impossible due to speed, competition, and risk.
+
+AI Snipe Mode continuously scans Solana, Base, and other supported blockchains in real time. It detects new token launches, monitors liquidity additions, verifies smart contracts, and applies predefined safety filters such as market cap limits, holder count, and advanced rug-check mechanisms.
+
+Example command:
+"Enable snipe mode on Solana, snipe new tokens with a maximum of $100, keep rug-check enabled."
+
+Once an opportunity is detected, RoboChatty automatically executes the trade. Take-profit targets and stop-loss levels can also be configured directly through chat.
+
+Result:
+Capture the fastest and safest opportunities without the stress, delay, or emotional pressure of manual sniping.
+
+Leave a clearly commented placeholder for future images/diagrams.
+
+==================================================
+5) GRID BOT PAGE (grid-bot.tsx)
+==================================================
+
+Keep the existing "COMING SOON" section.
+Below it, add a new content section.
+
+Title: Grid Trading Mode
+
+Content:
+Grid trading is one of the most effective strategies during ranging or moderately volatile markets. However, setting up and managing grid bots on traditional platforms is complex and requires constant monitoring.
+
+Example command:
+"Create a grid bot for SOL between $180 and $220 with a $2000 budget, using $100 per grid."
+
+RoboChatty automatically:
+- Places buy and sell orders at equal intervals within your defined price range
+- Buys as the price drops and sells as the price rises
+- Continuously realizes profits and reopens new grid levels
+- Manages risk using trailing take-profit, dynamic grid adjustments, and stop-loss protection
+
+Grid Trading Mode works 24/7, generating profits even while you sleep.
+
+Leave a clearly commented placeholder for future images/diagrams.
+
+==================================================
+6) WHITELIST PAGE (whitelist.tsx) – FIREBASE READY
+==================================================
+
+Integrate Firebase Firestore email collection.
+
+- Use Firebase Web SDK via npm imports
+- Add placeholder firebaseConfig object
+- Save emails to collection: "whitelist_emails"
+- Validate email input
+- Show loading, success, and error states
+- Do NOT expose keys (use placeholders)
+
+==================================================
+7) TEAM PAGE (team.tsx)
+==================================================
+
+Create animated team profile cards:
+- Glassmorphism cards
+- Subtle 3D hover tilt
+- Placeholder avatars
+- Name: Coming Soon
+- Role examples: AI, Blockchain, Product
+
+Responsive grid layout.
+No hardcoded team members.
+
+==================================================
+FINAL NOTES
+==================================================
+
+- Do NOT change routing or App.tsx logic
+- Do NOT break TypeScript types
+- Keep code clean and commented
+- Result should look like a premium Web3 startup website
