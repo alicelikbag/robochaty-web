@@ -1,0 +1,105 @@
+This is an existing Vite + React + TypeScript project.
+DO NOT change routing logic.
+DO NOT remove any pages or files.
+Only update navigation, team page content, and visual styling.
+
+==================================================
+1️⃣ BOT MENU (RESTORE & KEEP)
+==================================================
+
+Ensure the main navigation includes a "Bot" dropdown menu.
+
+Dropdown items:
+- Snipe Bot
+- Grid Bot
+
+Rules:
+- Use existing pages
+- Do NOT create or rename routes
+- Desktop: hover or click opens dropdown
+- Mobile: tap opens dropdown
+- Smooth fade + slide animation
+
+Menu order:
+
+RoboChaty
+AI Assistant Bot
+
+Home | Bot ▾ | Roadmap | Airdrop | Leaderboard | Litepaper | Team | Whitelist
+
+==================================================
+2️⃣ TEAM PAGE – LIMITED TO 3 MEMBERS
+==================================================
+
+Update team.tsx.
+
+Rules:
+- Show ONLY 3 team members
+- Clean, premium, Web3 startup look
+- Glassmorphism cards with subtle 3D hover tilt
+- Responsive layout (3 columns desktop, stacked mobile)
+
+Each team card should include:
+- Avatar placeholder (gradient or soft glow)
+- Name (placeholder text allowed)
+- Role (example: AI Engineer, Blockchain Engineer, Product)
+- GitHub icon + link under the card
+
+GitHub section:
+- Use GitHub icon
+- Text: "GitHub Profile"
+- Placeholder link:
+  https://github.com/username
+- Open in new tab
+- Subtle hover glow
+
+==================================================
+3️⃣ TEAM HOVER & INTERACTION
+==================================================
+
+On hover:
+- Card tilts slightly in 3D
+- Glow increases
+- GitHub icon highlights
+
+==================================================
+4️⃣ COLOR PALETTE – MORE VIBRANT & LOGO-ALIGNED
+==================================================
+
+Refresh the global color palette to feel brighter, energetic, and logo-aligned.
+
+Use these as core colors:
+- Primary Purple: #7C5CFF
+- Electric Cyan: #00E5FF
+- Neon Pink Accent: #FF4FD8
+- Highlight Yellow (sparingly): #FFD84D
+- Dark base: #0B0E1A
+
+Rules:
+- Backgrounds remain dark but vivid
+- Cards slightly lighter than background
+- Buttons use vibrant gradients
+- Headings pop more with color contrast
+- Avoid dull gray tones
+
+==================================================
+5️⃣ CSS UPDATES
+==================================================
+
+Update index.css:
+- Increase saturation slightly
+- Improve contrast for readability
+- Enhance neon glow (soft, not harsh)
+- Add subtle animated gradients where appropriate
+- Ensure accessibility is not broken
+
+==================================================
+FINAL EXPECTATION
+==================================================
+
+- Bot dropdown visible and functional
+- Team page shows exactly 3 members
+- Each team member has a GitHub profile link
+- Colors feel alive, modern, and logo-consistent
+- UI looks like a polished Web3 startup
+- No routing or TypeScript errors

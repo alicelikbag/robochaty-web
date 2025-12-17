@@ -9,7 +9,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   
-  /* RoboChaty Theme Colors */
+  /* RoboChaty Theme Colors - Vibrant & Neon */
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   
@@ -45,47 +45,47 @@
   --color-chart-5: hsl(var(--chart-5));
   
   --font-sans: 'Inter', sans-serif;
-  --font-display: 'Oxanium', sans-serif; /* Using Oxanium as it is already imported and fits the theme */
+  --font-display: 'Oxanium', sans-serif;
   
   --radius: 0.5rem;
 }
 
 :root {
-  /* Dark Theme by default for Web3 vibes */
-  --background: 228 40% 7%; /* #0B0E1A */
+  /* Dark Theme by default for Web3 vibes - Updated Palette */
+  --background: 228 40% 7%; /* #0B0E1A - Dark Base */
   --foreground: 210 40% 98%;
 
-  --card: 228 40% 10%; /* Slightly lighter than bg */
+  --card: 228 40% 12%; /* Slightly lighter than bg for better contrast */
   --card-foreground: 210 40% 98%;
 
-  --popover: 228 40% 7%;
+  --popover: 228 40% 9%;
   --popover-foreground: 210 40% 98%;
 
-  --primary: 252 100% 68%; /* #7C5CFF */
+  --primary: 252 100% 68%; /* #7C5CFF - Primary Purple */
   --primary-foreground: 210 40% 98%;
 
-  --secondary: 186 100% 50%; /* #00E5FF */
+  --secondary: 186 100% 45%; /* #00E5FF - Electric Cyan (slightly darkened for readability) */
   --secondary-foreground: 228 40% 7%;
 
   --muted: 217 33% 17%;
-  --muted-foreground: 215 20% 65%;
+  --muted-foreground: 215 20% 75%; /* Increased contrast */
 
-  --accent: 317 100% 74%; /* #FF7AD9 */
+  --accent: 317 100% 65%; /* #FF4FD8 - Neon Pink Accent (adjusted for readability) */
   --accent-foreground: 228 40% 7%;
 
-  --destructive: 0 62% 30%;
+  --destructive: 0 80% 50%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 217 33% 20%;
+  --border: 217 33% 25%; /* Lighter border for visibility */
   --input: 217 33% 20%;
   --ring: 252 100% 68%;
 
   --radius: 0.5rem;
   
   --chart-1: 252 100% 68%;
-  --chart-2: 186 100% 50%;
-  --chart-3: 317 100% 74%;
-  --chart-4: 43 74% 66%;
+  --chart-2: 186 100% 45%;
+  --chart-3: 317 100% 65%;
+  --chart-4: 47 100% 65%; /* #FFD84D - Highlight Yellow */
   --chart-5: 27 87% 67%;
 }
 
@@ -94,28 +94,28 @@
   --background: 228 40% 7%;
   --foreground: 210 40% 98%;
   
-  --card: 228 40% 10%;
+  --card: 228 40% 12%;
   --card-foreground: 210 40% 98%;
   
-  --popover: 228 40% 7%;
+  --popover: 228 40% 9%;
   --popover-foreground: 210 40% 98%;
   
   --primary: 252 100% 68%;
   --primary-foreground: 210 40% 98%;
   
-  --secondary: 186 100% 50%;
+  --secondary: 186 100% 45%;
   --secondary-foreground: 228 40% 7%;
   
   --muted: 217 33% 17%;
-  --muted-foreground: 215 20% 65%;
+  --muted-foreground: 215 20% 75%;
   
-  --accent: 317 100% 74%;
+  --accent: 317 100% 65%;
   --accent-foreground: 228 40% 7%;
   
-  --destructive: 0 62% 30%;
+  --destructive: 0 80% 50%;
   --destructive-foreground: 210 40% 98%;
   
-  --border: 217 33% 20%;
+  --border: 217 33% 25%;
   --input: 217 33% 20%;
   --ring: 252 100% 68%;
 }
@@ -132,10 +132,11 @@
 /* Custom Utilities for Glassmorphism & Glow */
 @layer utilities {
   .glass-card {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   }
   
   .text-gradient {
@@ -150,11 +151,11 @@
   }
 
   .glow-sm {
-    box-shadow: 0 0 10px rgba(124, 92, 255, 0.3);
+    box-shadow: 0 0 15px rgba(124, 92, 255, 0.4);
   }
   
   .glow-md {
-    box-shadow: 0 0 20px rgba(124, 92, 255, 0.4);
+    box-shadow: 0 0 25px rgba(124, 92, 255, 0.5);
   }
 
   .perspective-1000 {

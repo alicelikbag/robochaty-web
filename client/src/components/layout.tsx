@@ -1,8 +1,14 @@
 import { Link, useLocation } from "wouter";
-import { Twitter, Send, Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Twitter, Send, Menu, X, ChevronDown, Bot } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/ui/logo";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,9 +16,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   const navLinks = [
     { href: "/", label: "Home", isAnchor: false },
+    // Bot dropdown will be inserted here manually
     { href: "/#roadmap", label: "Roadmap", isAnchor: true },
     { href: "/airdrop", label: "Airdrop", isAnchor: false },
     { href: "/leaderboard", label: "Leaderboard", isAnchor: false },
+    { href: "/litepaper", label: "Litepaper", isAnchor: false },
+    { href: "/team", label: "Team", isAnchor: false },
   ];
 
   const handleNavClick = (href: string, isAnchor: boolean) => {
@@ -43,17 +52,28 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </Link>
           
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
-            {navLinks.map((link) => (
-              <button
-                key={link.label}
-                onClick={() => handleNavClick(link.href, link.isAnchor)}
-                className="relative transition-colors hover:text-primary text-foreground/80 hover:text-primary group py-2 cursor-pointer bg-transparent border-none p-0 font-medium"
-              >
-                {link.label}
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </button>
-            ))}
+          <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+            <Link href="/" className="transition-colors hover:text-primary text-foreground/80">Home</Link>
+            
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-primary text-foreground/80 outline-none">
+                Bot <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-48 bg-black/90 backdrop-blur-xl border-white/10">
+                <DropdownMenuItem asChild className="focus:bg-primary/20 focus:text-primary cursor-pointer">
+                  <Link href="/snipe-bot">Snipe Bot</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="focus:bg-primary/20 focus:text-primary cursor-pointer">
+                  <Link href="/grid-bot">Grid Bot</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <button onClick={() => handleNavClick("/#roadmap", true)} className="transition-colors hover:text-primary text-foreground/80 bg-transparent border-none p-0 font-medium cursor-pointer">Roadmap</button>
+            <Link href="/airdrop" className="transition-colors hover:text-primary text-foreground/80">Airdrop</Link>
+            <Link href="/leaderboard" className="transition-colors hover:text-primary text-foreground/80">Leaderboard</Link>
+            <Link href="/litepaper" className="transition-colors hover:text-primary text-foreground/80">Litepaper</Link>
+            <Link href="/team" className="transition-colors hover:text-primary text-foreground/80">Team</Link>
           </nav>
 
           <div className="hidden md:flex items-center space-x-6">
@@ -79,16 +99,44 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {/* Mobile Nav */}
         {isMenuOpen && (
           <div className="md:hidden border-t border-border/40 bg-background/95 backdrop-blur-xl p-4 space-y-4 animate-in slide-in-from-top-2">
-             {navLinks.map((link) => (
-              <button 
-                key={link.label}
-                onClick={() => handleNavClick(link.href, link.isAnchor)}
-                className="block w-full text-left py-3 px-4 rounded-lg hover:bg-white/5 text-sm font-medium transition-colors hover:text-primary cursor-pointer bg-transparent border-none"
-              >
-                {link.label}
-              </button>
-            ))}
-             <div className="flex items-center space-x-6 pt-4 border-t border-border/40 px-4">
+             <Link href="/" className="block py-2 px-4 rounded-lg hover:bg-white/5 text-sm font-medium transition-colors hover:text-primary" onClick={() => setIsMenuOpen(false)}>
+               Home
+             </Link>
+             
+             <div className="px-4 py-2">
+               <div className="text-sm font-medium text-foreground/80 mb-2 flex items-center gap-2">
+                 <Bot className="h-4 w-4" /> Bot Tools
+               </div>
+               <div className="pl-4 space-y-2 border-l border-white/10">
+                 <Link href="/snipe-bot" className="block text-sm text-muted-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                   Snipe Bot
+                 </Link>
+                 <Link href="/grid-bot" className="block text-sm text-muted-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                   Grid Bot
+                 </Link>
+               </div>
+             </div>
+
+             <button 
+               onClick={() => handleNavClick("/#roadmap", true)}
+               className="block w-full text-left py-2 px-4 rounded-lg hover:bg-white/5 text-sm font-medium transition-colors hover:text-primary bg-transparent border-none"
+             >
+               Roadmap
+             </button>
+             <Link href="/airdrop" className="block py-2 px-4 rounded-lg hover:bg-white/5 text-sm font-medium transition-colors hover:text-primary" onClick={() => setIsMenuOpen(false)}>
+               Airdrop
+             </Link>
+             <Link href="/leaderboard" className="block py-2 px-4 rounded-lg hover:bg-white/5 text-sm font-medium transition-colors hover:text-primary" onClick={() => setIsMenuOpen(false)}>
+               Leaderboard
+             </Link>
+             <Link href="/litepaper" className="block py-2 px-4 rounded-lg hover:bg-white/5 text-sm font-medium transition-colors hover:text-primary" onClick={() => setIsMenuOpen(false)}>
+               Litepaper
+             </Link>
+             <Link href="/team" className="block py-2 px-4 rounded-lg hover:bg-white/5 text-sm font-medium transition-colors hover:text-primary" onClick={() => setIsMenuOpen(false)}>
+               Team
+             </Link>
+
+             <div className="flex items-center space-x-6 pt-4 border-t border-border/40 px-4 mt-2">
                 <a href="https://x.com/RoboChaty" target="_blank" rel="noreferrer" className="text-foreground/60 hover:text-[#1DA1F2]">
                   <Twitter className="h-6 w-6" />
                 </a>
