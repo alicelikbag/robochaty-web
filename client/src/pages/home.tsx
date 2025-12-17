@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { ArrowRight, Zap, Shield, LineChart, CheckCircle2, Circle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Logo } from "@/components/ui/logo";
 
 const roadmapPhases = [
   {
@@ -70,6 +71,10 @@ export default function Home() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[100px] animate-pulse pointer-events-none" />
           
           <div className="z-10 max-w-4xl space-y-8 animate-in fade-in zoom-in duration-700">
+            <div className="flex justify-center mb-6 animate-float opacity-80 hover:opacity-100 transition-opacity">
+               <Logo size="xl" showText={false} />
+            </div>
+
             <div className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-primary backdrop-blur-sm">
               <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
               RoboChaty v1.0 Live

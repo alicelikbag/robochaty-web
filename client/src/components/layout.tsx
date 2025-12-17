@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Twitter, Send, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/ui/logo";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,10 +38,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans selection:bg-primary/30 selection:text-primary-foreground">
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4">
-          <Link href="/" className="mr-6 flex items-center space-x-2 cursor-pointer">
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight hover:opacity-80 transition-opacity">
-              RoboChaty
-            </span>
+          <Link href="/" className="mr-6 flex items-center space-x-2 cursor-pointer hover:opacity-80 transition-opacity">
+             <Logo size="md" />
           </Link>
           
           {/* Desktop Nav */}
@@ -112,10 +111,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <footer className="border-t border-border/40 bg-background/95 backdrop-blur py-12">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-6 px-4">
           <div className="flex flex-col items-center md:items-start gap-2">
-            <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">RoboChaty</span>
-            <p className="text-sm text-muted-foreground">
-              Advanced AI Trading Tools for Web3
-            </p>
+             <div className="flex items-center gap-2">
+               <Logo size="sm" />
+             </div>
+             <p className="text-sm text-muted-foreground mt-2">
+               Advanced AI Trading Tools for Web3
+             </p>
           </div>
           
           <div className="flex items-center space-x-8">
