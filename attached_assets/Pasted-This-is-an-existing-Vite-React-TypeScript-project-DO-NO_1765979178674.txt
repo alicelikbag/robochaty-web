@@ -1,0 +1,132 @@
+This is an existing Vite + React + TypeScript project.
+DO NOT change routing logic or remove existing pages.
+Only ADD new pages and sections in a safe way.
+Do NOT delete any files.
+
+==================================================
+1️⃣ NAVIGATION UPDATES
+==================================================
+
+Update the main header navigation:
+
+Home | Roadmap | Airdrop | Leaderboard
+
+- "Roadmap" scrolls to the roadmap section on the Home page (#roadmap)
+- "Airdrop" navigates to the existing airdrop page
+- "Leaderboard" navigates to the existing leaderboard page
+
+==================================================
+2️⃣ ROADMAP SECTION (HOME PAGE)
+==================================================
+
+Add a new section to the Home page component.
+
+Section id:
+roadmap
+
+Position:
+- After hero section
+- Before features section
+
+DESIGN:
+- Futuristic 3D UI roadmap
+- Glassmorphism cards
+- Soft neon glow
+- Animated gradient background
+- 3D tilt on hover
+- Floating animation
+- Scroll-in animation
+
+ROADMAP PHASES:
+
+CARD 1:
+2025 – Foundation Phase
+- Mainnet Launch
+- Virtuals TGE
+- AI-Powered Crypto Assistant Core
+- Real-Time Market Intelligence
+Badge: Live / In Progress
+
+CARD 2:
+2026 Q1 – Advanced Trading Intelligence
+- Grid Trading Mode
+- AI Snipe Mode
+- Fully Autonomous Website Support
+- Personalized AI Agent
+Badge: Coming Soon
+
+CARD 3:
+2026 Q2 – Predictive & Portfolio AI
+- AI Futures Prediction Engine
+- Smart Portfolio Rebalancing
+- Cross-Chain Asset Tracking
+- Risk Scoring & AI Hedging System
+Badge: Planned
+
+CARD 4:
+2026 Q3 – Institutional & Web3 Expansion
+- DAO & Institutional AI Support
+- On-Chain Behavior Analysis
+- AI Copy Trading
+- Web3 API & Developer SDK
+Badge: Vision
+
+==================================================
+3️⃣ AIRDROP PAGE
+==================================================
+
+If airdrop.tsx does not exist, create it.
+If it exists, update it.
+
+Page content:
+- Full-screen hero section
+- Centered text:
+  COMING SOON
+- Soft fade-in animation
+- Futuristic gradient background
+- Subtle neon glow
+
+==================================================
+4️⃣ LEADERBOARD PAGE
+==================================================
+
+If leaderboard.tsx does not exist, create it.
+If it exists, update it.
+
+Page content:
+- Full-screen hero section
+- Centered text:
+  COMING SOON
+- Neon glow + pulse animation
+- Cyber / grid-style background
+
+==================================================
+5️⃣ STYLES & ANIMATIONS
+==================================================
+
+Update index.css:
+- Add roadmap styles
+- Add 3D hover effects
+- Add animated gradients
+- Add fade-in and pulse keyframes
+- Use brand colors:
+  #7C5CFF, #00E5FF, #FF7AD9
+
+==================================================
+6️⃣ RESPONSIVE RULES
+==================================================
+
+- Desktop: horizontal roadmap layout
+- Tablet: grid layout
+- Mobile: vertical stack
+- Touch-friendly interactions
+
+==================================================
+FINAL EXPECTATION
+==================================================
+
+- Roadmap feels alive, premium, and 3D
+- Navigation works correctly
+- Airdrop & Leaderboard pages show Coming Soon
+- No routing breaks
+- No TypeScript errors

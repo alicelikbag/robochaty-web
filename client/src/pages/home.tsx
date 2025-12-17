@@ -1,7 +1,64 @@
 import { Layout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ArrowRight, Bot, Zap, Shield, LineChart } from "lucide-react";
+import { ArrowRight, Zap, Shield, LineChart, CheckCircle2, Circle } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+const roadmapPhases = [
+  {
+    phase: "2025 – Foundation Phase",
+    status: "Live / In Progress",
+    statusColor: "text-green-400",
+    items: [
+      "Mainnet Launch",
+      "Virtuals TGE",
+      "AI-Powered Crypto Assistant Core",
+      "Real-Time Market Intelligence"
+    ],
+    glow: "shadow-[0_0_30px_rgba(74,222,128,0.1)]",
+    border: "border-green-500/20"
+  },
+  {
+    phase: "2026 Q1 – Advanced Trading Intelligence",
+    status: "Coming Soon",
+    statusColor: "text-secondary",
+    items: [
+      "Grid Trading Mode",
+      "AI Snipe Mode",
+      "Fully Autonomous Website Support",
+      "Personalized AI Agent"
+    ],
+    glow: "shadow-[0_0_30px_rgba(0,229,255,0.1)]",
+    border: "border-secondary/20"
+  },
+  {
+    phase: "2026 Q2 – Predictive & Portfolio AI",
+    status: "Planned",
+    statusColor: "text-primary",
+    items: [
+      "AI Futures Prediction Engine",
+      "Smart Portfolio Rebalancing",
+      "Cross-Chain Asset Tracking",
+      "Risk Scoring & AI Hedging System"
+    ],
+    glow: "shadow-[0_0_30px_rgba(124,92,255,0.1)]",
+    border: "border-primary/20"
+  },
+  {
+    phase: "2026 Q3 – Institutional & Web3 Expansion",
+    status: "Vision",
+    statusColor: "text-accent",
+    items: [
+      "DAO & Institutional AI Support",
+      "On-Chain Behavior Analysis",
+      "AI Copy Trading",
+      "Web3 API & Developer SDK"
+    ],
+    glow: "shadow-[0_0_30px_rgba(255,122,217,0.1)]",
+    border: "border-accent/20"
+  }
+];
 
 export default function Home() {
   return (
@@ -42,6 +99,56 @@ export default function Home() {
               </Button>
             </div>
           </div>
+        </section>
+
+        {/* Roadmap Section */}
+        <section id="roadmap" className="py-24 relative overflow-hidden">
+           {/* Background Gradient */}
+           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent opacity-50" />
+           
+           <div className="container px-4 relative z-10">
+             <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+               <Badge className="mb-4 bg-white/5 text-white border-white/10 px-4 py-1 hover:bg-white/10">Project Timeline</Badge>
+               <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                 <span className="bg-gradient-to-r from-white via-white to-gray-400 bg-clip-text text-transparent">Strategic Roadmap</span>
+               </h2>
+               <p className="text-muted-foreground max-w-2xl mx-auto">
+                 Our vision for the future of autonomous decentralized trading.
+               </p>
+             </div>
+
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+               {roadmapPhases.map((phase, index) => (
+                 <div 
+                   key={index}
+                   className={`group perspective-1000 animate-in fade-in slide-in-from-bottom-12 duration-700`}
+                   style={{ animationDelay: `${index * 150}ms` }}
+                 >
+                   <Card className={`h-full glass-card bg-black/40 backdrop-blur-xl ${phase.border} hover:border-white/20 transition-all duration-500 transform hover:-translate-y-2 hover:rotate-x-2 ${phase.glow}`}>
+                     <CardHeader className="pb-4">
+                       <div className={`text-xs font-mono mb-2 ${phase.statusColor} flex items-center`}>
+                         <div className={`w-1.5 h-1.5 rounded-full mr-2 ${phase.status === "Live / In Progress" ? "bg-green-400 animate-pulse" : "bg-current"}`} />
+                         {phase.status}
+                       </div>
+                       <CardTitle className="text-lg font-bold leading-tight min-h-[3rem] flex items-center">
+                         {phase.phase}
+                       </CardTitle>
+                     </CardHeader>
+                     <CardContent>
+                       <ul className="space-y-3">
+                         {phase.items.map((item, i) => (
+                           <li key={i} className="flex items-start text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                             <div className="mt-1.5 mr-3 w-1 h-1 rounded-full bg-white/30 group-hover:bg-white/80 transition-colors" />
+                             {item}
+                           </li>
+                         ))}
+                       </ul>
+                     </CardContent>
+                   </Card>
+                 </div>
+               ))}
+             </div>
+           </div>
         </section>
 
         {/* Features Grid */}

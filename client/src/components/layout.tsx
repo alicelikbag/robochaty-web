@@ -1,18 +1,37 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Twitter, Send, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [location, setLocation] = useLocation();
 
   const navLinks = [
-    { href: "/litepaper", label: "Litepaper" },
-    { href: "/snipe-bot", label: "Snipe Bot" },
-    { href: "/grid-bot", label: "Grid Bot" },
-    { href: "/whitelist", label: "Whitelist" },
-    { href: "/team", label: "Team" },
+    { href: "/", label: "Home", isAnchor: false },
+    { href: "/#roadmap", label: "Roadmap", isAnchor: true },
+    { href: "/airdrop", label: "Airdrop", isAnchor: false },
+    { href: "/leaderboard", label: "Leaderboard", isAnchor: false },
   ];
+
+  const handleNavClick = (href: string, isAnchor: boolean) => {
+    setIsMenuOpen(false);
+    if (isAnchor && href.startsWith("/#")) {
+      const id = href.split("#")[1];
+      if (location !== "/") {
+        setLocation("/");
+        setTimeout(() => {
+          const element = document.getElementById(id);
+          element?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      } else {
+        const element = document.getElementById(id);
+        element?.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      setLocation(href);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans selection:bg-primary/30 selection:text-primary-foreground">
@@ -27,10 +46,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="relative transition-colors hover:text-primary text-foreground/80 hover:text-primary group py-2 cursor-pointer">
+              <button
+                key={link.label}
+                onClick={() => handleNavClick(link.href, link.isAnchor)}
+                className="relative transition-colors hover:text-primary text-foreground/80 hover:text-primary group py-2 cursor-pointer bg-transparent border-none p-0 font-medium"
+              >
                 {link.label}
                 <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </Link>
+              </button>
             ))}
           </nav>
 
@@ -58,9 +81,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {isMenuOpen && (
           <div className="md:hidden border-t border-border/40 bg-background/95 backdrop-blur-xl p-4 space-y-4 animate-in slide-in-from-top-2">
              {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="block py-3 px-4 rounded-lg hover:bg-white/5 text-sm font-medium transition-colors hover:text-primary cursor-pointer" onClick={() => setIsMenuOpen(false)}>
+              <button 
+                key={link.label}
+                onClick={() => handleNavClick(link.href, link.isAnchor)}
+                className="block w-full text-left py-3 px-4 rounded-lg hover:bg-white/5 text-sm font-medium transition-colors hover:text-primary cursor-pointer bg-transparent border-none"
+              >
                 {link.label}
-              </Link>
+              </button>
             ))}
              <div className="flex items-center space-x-6 pt-4 border-t border-border/40 px-4">
                 <a href="https://x.com/RoboChaty" target="_blank" rel="noreferrer" className="text-foreground/60 hover:text-[#1DA1F2]">
@@ -85,7 +112,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <footer className="border-t border-border/40 bg-background/95 backdrop-blur py-12">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-6 px-4">
           <div className="flex flex-col items-center md:items-start gap-2">
-            <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">RoboChatty</span>
+            <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">RoboChaty</span>
             <p className="text-sm text-muted-foreground">
               Advanced AI Trading Tools for Web3
             </p>

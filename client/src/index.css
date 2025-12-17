@@ -156,4 +156,19 @@
   .glow-md {
     box-shadow: 0 0 20px rgba(124, 92, 255, 0.4);
   }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
