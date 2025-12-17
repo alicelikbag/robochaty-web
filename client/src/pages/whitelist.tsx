@@ -95,7 +95,7 @@ export default function Whitelist() {
               </div>
               <CardTitle className="text-3xl md:text-4xl font-bold">Join the Whitelist</CardTitle>
               <CardDescription className="text-lg">
-                Get early access to RoboChatty's AI trading tools and exclusive benefits.
+                Get early access to RoboChaty's AI trading tools and exclusive benefits.
               </CardDescription>
             </CardHeader>
             <CardContent className="p-8">

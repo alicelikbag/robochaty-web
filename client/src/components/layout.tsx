@@ -20,7 +20,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4">
           <Link href="/" className="mr-6 flex items-center space-x-2 cursor-pointer">
             <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight hover:opacity-80 transition-opacity">
-              RoboChatty
+              RoboChaty
             </span>
           </Link>
           
@@ -105,7 +105,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
         <div className="container mt-8 pt-8 border-t border-border/20 text-center text-xs text-muted-foreground/60">
-           © {new Date().getFullYear()} RoboChatty. All rights reserved.
+           © {new Date().getFullYear()} RoboChaty. All rights reserved.
         </div>
       </footer>
     </div>

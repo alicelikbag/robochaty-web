@@ -8,7 +8,7 @@ export default function Litepaper() {
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-purple-400 to-secondary bg-clip-text text-transparent">
-            RoboChatty Litepaper
+            RoboChaty Litepaper
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             The future of automated crypto trading and analysis

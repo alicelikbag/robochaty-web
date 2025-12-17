@@ -75,7 +75,7 @@ export default function GridBot() {
                </Card>
 
                <div className="pt-4">
-                 <h3 className="font-semibold text-white mb-2">RoboChatty automatically:</h3>
+                 <h3 className="font-semibold text-white mb-2">RoboChaty automatically:</h3>
                  <ul className="space-y-3">
                    <li className="flex items-start text-muted-foreground">
                      <div className="mt-1 mr-3 w-2 h-2 rounded-full bg-secondary shadow-[0_0_10px_#00E5FF]" />

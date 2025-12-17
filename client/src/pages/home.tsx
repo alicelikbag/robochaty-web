@@ -15,7 +15,7 @@ export default function Home() {
           <div className="z-10 max-w-4xl space-y-8 animate-in fade-in zoom-in duration-700">
             <div className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-primary backdrop-blur-sm">
               <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
-              RoboChatty v1.0 Live
+              RoboChaty v1.0 Live
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">

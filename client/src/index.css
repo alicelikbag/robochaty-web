@@ -9,7 +9,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   
-  /* RoboChatty Theme Colors */
+  /* RoboChaty Theme Colors */
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   
