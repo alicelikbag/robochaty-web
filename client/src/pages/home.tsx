@@ -17,7 +17,7 @@ const roadmapPhases = [
       "Virtuals TGE",
       "AI-Powered Crypto Assistant Core",
       "Real-Time Market Intelligence",
-      "Early access to Grid Trading Mode and AI Snipe Mode",
+      "Early access to Grid Trading Mode and AI Snipe Mode for $CHATY holders",
     ],
     glow: "shadow-[0_0_30px_rgba(74,222,128,0.1)]",
     border: "border-green-500/20",
