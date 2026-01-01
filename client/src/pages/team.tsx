@@ -27,7 +27,7 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: "Ömer Aydın",
+    name: "Sektor7k",
     role: "Software Developer",
     image: "/team1.jpeg",
     gradient: "from-primary/80 to-secondary/80",
