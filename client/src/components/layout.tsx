@@ -1,5 +1,14 @@
 import { Link, useLocation } from "wouter";
-import { Twitter, Send, Menu, X, ChevronDown, Bot } from "lucide-react";
+import {
+  Twitter,
+  Send,
+  Menu,
+  X,
+  ChevronDown,
+  Bot,
+  ExternalLink,
+  Sparkles,
+} from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/ui/logo";
@@ -13,16 +22,6 @@ import {
 export function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [location, setLocation] = useLocation();
-
-  const navLinks = [
-    { href: "/", label: "Home", isAnchor: false },
-    // Bot dropdown will be inserted here manually
-    { href: "/#roadmap", label: "Roadmap", isAnchor: true },
-    { href: "/airdrop", label: "Airdrop", isAnchor: false },
-    { href: "/leaderboard", label: "Leaderboard", isAnchor: false },
-    { href: "/litepaper", label: "Litepaper", isAnchor: false },
-    { href: "/team", label: "Team", isAnchor: false },
-  ];
 
   const handleNavClick = (href: string, isAnchor: boolean) => {
     setIsMenuOpen(false);
@@ -45,7 +44,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans selection:bg-primary/30 selection:text-primary-foreground">
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-[100] w-full border-b border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4">
           <Link
             href="/"
@@ -69,7 +68,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="start"
-                className="w-48 bg-black/90 backdrop-blur-xl border-white/10"
+                className="w-48 bg-black/95 backdrop-blur-xl border border-white/10 z-[110]"
               >
                 <DropdownMenuItem
                   asChild
@@ -116,6 +115,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
             >
               Team
             </Link>
+
+            {/* VIRTUALS BUY BUTTON */}
+            <a
+              href="https://app.virtuals.io/prototypes/0xd028C8338B37C62506E56cFb1F51019869C2B7d1"
+              target="_blank"
+              rel="noreferrer"
+              className="relative group flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-secondary/20 to-primary/20 border border-secondary/40 hover:border-secondary transition-all duration-300"
+            >
+              <span className="absolute inset-0 rounded-full bg-secondary/10 blur-md group-hover:bg-secondary/20 transition-all"></span>
+              <Sparkles className="w-3.5 h-3.5 text-secondary animate-pulse" />
+              <span className="relative z-10 text-[13px] font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
+                BUY $CHATY
+              </span>
+              <ExternalLink className="w-3 h-3 text-secondary/70 group-hover:translate-x-0.5 transition-transform" />
+            </a>
           </nav>
 
           <div className="hidden md:flex items-center space-x-6">
@@ -224,6 +238,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
               Team
             </Link>
 
+            <a
+              href="https://app.virtuals.io/prototypes/0xd028C8338B37C62506E56cFb1F51019869C2B7d1"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-secondary to-primary text-white font-bold text-sm shadow-lg shadow-secondary/20"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <Sparkles className="w-4 h-4" />
+              BUY $CHATY ON VIRTUALS
+            </a>
+
             <div className="flex items-center space-x-6 pt-4 border-t border-border/40 px-4 mt-2">
               <a
                 href="https://x.com/RoboChaty"
@@ -247,20 +272,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </header>
 
       <main className="flex-1 relative overflow-hidden">
-        {/* Background glow effects */}
+        {/* Arka plan efektleri için z-index negatif tutuldu */}
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[128px] pointer-events-none -z-10 opacity-50 mix-blend-screen" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[128px] pointer-events-none -z-10 opacity-50 mix-blend-screen" />
-
         {children}
       </main>
 
       <footer className="border-t border-white/5 bg-black/40 backdrop-blur-xl py-12 relative overflow-hidden">
-        {/* Hafif bir parlama efekti */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-20" />
-
-        {/* mx-auto ekleyerek ortaladık */}
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
-          {/* Sol Kısım: Logo ve Açıklama */}
           <div className="flex flex-col items-center md:items-start gap-3">
             <div className="flex items-center gap-2">
               <Logo size="sm" />
@@ -272,8 +292,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
               Advanced AI Trading Tools for the Decentralized Era.
             </p>
           </div>
-
-          {/* Orta Kısım: Linkler (Opsiyonel ama şık durur) */}
           <div className="hidden lg:flex items-center space-x-8 text-sm text-muted-foreground/60">
             <Link
               href="/litepaper"
@@ -294,8 +312,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
               Grid Bot
             </Link>
           </div>
-
-          {/* Sağ Kısım: Sosyal Medya */}
           <div className="flex items-center space-x-5">
             <a
               href="https://x.com/RoboChaty"
@@ -315,8 +331,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </a>
           </div>
         </div>
-
-        {/* Alt Telif Hakkı Kısmı */}
         <div className="container mx-auto px-4 mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-[10px] uppercase tracking-widest text-muted-foreground/40 font-medium">
             Built on Virtuals Protocol
