@@ -2,7 +2,14 @@ import { useState, useEffect } from "react";
 import { Layout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ArrowRight, Zap, Shield, LineChart, Send } from "lucide-react";
+import {
+  ArrowRight,
+  Zap,
+  Shield,
+  LineChart,
+  Send,
+  ExternalLink,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Logo } from "@/components/ui/logo";
@@ -68,7 +75,6 @@ export default function Home() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      // Fare pozisyonunu normalize et (-0.5 ile 0.5 arası)
       setMousePos({
         x: e.clientX / window.innerWidth - 0.5,
         y: e.clientY / window.innerHeight - 0.5,
@@ -80,8 +86,25 @@ export default function Home() {
 
   return (
     <Layout>
-      <div className="flex flex-col min-h-[calc(100vh-64px)] w-full relative overflow-hidden bg-[#030303]">
-        {/* INTERACTIVE BACKGROUND (Parallax Blobs) */}
+      {/* 1. TOP ANNOUNCEMENT BAR */}
+      <div className="w-full bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 border-b border-white/10 py-2.5 text-center relative z-50 backdrop-blur-md">
+        <a
+          href="https://app.virtuals.io/prototypes/0xd028C8338B37C62506E56cFb1F51019869C2B7d1"
+          target="_blank"
+          rel="noreferrer"
+          className="text-xs md:text-sm font-medium hover:text-secondary transition-all flex items-center justify-center gap-2 group"
+        >
+          <span className="animate-pulse text-secondary">🚀</span>
+          $CHATY is now live on Virtuals.io!
+          <span className="underline decoration-secondary/50 underline-offset-4 group-hover:text-secondary">
+            Join the prototype phase
+          </span>
+          <ExternalLink className="w-3 h-3 inline group-hover:translate-x-0.5 transition-transform" />
+        </a>
+      </div>
+
+      <div className="flex flex-col min-h-[calc(100vh-100px)] w-full relative overflow-hidden bg-[#030303]">
+        {/* INTERACTIVE BACKGROUND */}
         <div className="fixed inset-0 pointer-events-none z-0">
           <div
             className="absolute w-[800px] h-[800px] rounded-full bg-primary/10 blur-[120px] transition-transform duration-1000 ease-out"
@@ -104,7 +127,6 @@ export default function Home() {
         {/* HERO SECTION */}
         <section className="flex-1 flex flex-col justify-center items-center text-center px-4 py-20 relative z-10">
           <div className="relative z-10 w-full flex flex-col items-center max-w-4xl mx-auto space-y-8 animate-in fade-in zoom-in duration-1000">
-            {/* Logo fareyi takip eder */}
             <div
               className="flex justify-center mb-6 transition-transform duration-300 ease-out"
               style={{
@@ -131,34 +153,42 @@ export default function Home() {
               launches, trade ranges, and manage risk — all from one interface.
             </p>
 
+            {/* ACTION BUTTONS */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              {/* TELEGRAM BUTONU */}
+              {/* PRIMARY REDIRECT TO VIRTUALS */}
               <Button
                 asChild
                 size="lg"
-                className="h-14 px-8 text-lg rounded-full bg-[#0088cc] hover:bg-[#0077b5] transition-all shadow-lg shadow-[#0088cc]/25 group relative overflow-hidden"
+                className="h-14 px-8 text-lg rounded-full bg-gradient-to-r from-secondary to-primary hover:opacity-90 transition-all shadow-xl shadow-secondary/20 group relative overflow-hidden border-none"
+              >
+                <a
+                  href="https://app.virtuals.io/prototypes/0xd028C8338B37C62506E56cFb1F51019869C2B7d1"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className="relative z-10 flex items-center font-bold">
+                    Buy $CHATY on Virtuals
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shine transition-transform" />
+                </a>
+              </Button>
+
+              {/* SECONDARY TELEGRAM LINK */}
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="h-14 px-8 text-lg rounded-full border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all"
               >
                 <a
                   href="https://t.me/robochatybot"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span className="relative z-10 flex items-center">
-                    Start Trading on Telegram{" "}
-                    <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </span>
-                  {/* Buton içi parıltı animasyonu */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shine transition-transform" />
+                  <Send className="mr-2 w-5 h-5 text-[#0088cc]" />
+                  Telegram Bot
                 </a>
-              </Button>
-
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="h-14 px-8 text-lg rounded-full border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-sm"
-              >
-                <Link href="/litepaper">Read Litepaper</Link>
               </Button>
             </div>
           </div>
