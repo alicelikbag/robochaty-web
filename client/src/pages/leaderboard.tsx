@@ -2,37 +2,37 @@ import { Layout } from "@/components/layout";
 import { Trophy, ExternalLink, CalendarDays } from "lucide-react";
 import { useEffect, useState } from "react";
 
-// Top 5 Kullanıcı Verisi
+// Yeni Top 5 Kullanıcı Verisi (GÜNCELLENDİ)
 const topUsers = [
   {
     rank: 1,
-    handle: "@LunaraXBT",
-    url: "https://x.com/LunaraXBT",
-    score: "98.4",
+    handle: "@0xinfinix",
+    url: "https://x.com/0xinfinix",
+    score: "99.2",
   },
   {
     rank: 2,
-    handle: "@DefiSparco",
-    url: "https://x.com/DefiSparco",
-    score: "96.1",
+    handle: "@LunaraXBT",
+    url: "https://x.com/LunaraXBT",
+    score: "97.5",
   },
   {
     rank: 3,
-    handle: "@ufuckthemilk",
-    url: "https://x.com/ufuckthemilk",
-    score: "94.8",
+    handle: "@ImKovace",
+    url: "https://x.com/ImKovace",
+    score: "95.8",
   },
   {
     rank: 4,
-    handle: "@trenchorbase",
-    url: "https://x.com/trenchorbase",
-    score: "92.5",
+    handle: "@Chainriffs",
+    url: "https://x.com/Chainriffs",
+    score: "93.4",
   },
   {
     rank: 5,
-    handle: "@Chainriffs",
-    url: "https://x.com/Chainriffs",
-    score: "90.2",
+    handle: "@Im_inoti",
+    url: "https://x.com/Im_inoti",
+    score: "91.9",
   },
 ];
 
@@ -68,7 +68,7 @@ export default function Leaderboard() {
 
             <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
               <span className="bg-gradient-to-r from-primary via-white to-accent bg-clip-text text-transparent">
-                TOP CREATOR
+                TOP INFLUENCERS
               </span>
             </h1>
             <p className="text-muted-foreground text-lg">
@@ -116,15 +116,15 @@ export default function Leaderboard() {
 
                   {/* Kullanıcı Bilgisi + Profil Resmi */}
                   <div className="col-span-6 md:col-span-7 flex items-center gap-4 pl-2">
-                    {/* Unavatar ile Dinamik Profil Resmi */}
                     <div className="relative">
                       <img
                         src={`https://unavatar.io/twitter/${user.handle.replace("@", "")}`}
                         alt={user.handle}
                         className="w-12 h-12 rounded-full object-cover border-2 border-white/10 group-hover:border-primary/50 transition-colors bg-white/5"
                       />
-                      {/* Online Status Dot (Dekoratif) */}
-                      <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-black"></div>
+                      <div
+                        className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-black ${index < 3 ? "bg-green-500" : "bg-gray-500"}`}
+                      ></div>
                     </div>
 
                     <div className="flex flex-col">
@@ -132,8 +132,8 @@ export default function Leaderboard() {
                         {user.handle}
                       </span>
                       <span className="text-xs text-muted-foreground hidden md:block">
-                        Social Score:{" "}
-                        <span className="text-green-400 font-mono">
+                        Engagement Score:{" "}
+                        <span className="text-primary font-mono font-bold">
                           {user.score}
                         </span>
                       </span>
@@ -148,7 +148,7 @@ export default function Leaderboard() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/50 transition-all text-xs font-medium text-white group-hover:shadow-[0_0_15px_rgba(124,92,255,0.2)]"
                     >
-                      <span className="hidden sm:inline">View</span>
+                      <span className="hidden sm:inline">Profile</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   </div>
@@ -161,7 +161,7 @@ export default function Leaderboard() {
           <div className="mt-8 flex justify-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/40 border border-white/5 text-xs text-muted-foreground backdrop-blur-sm">
               <CalendarDays className="w-3 h-3 text-primary" />
-              <span>Last Change:</span>
+              <span>Leaderboard Updated:</span>
               <span className="text-white font-mono">{currentDate}</span>
             </div>
           </div>
