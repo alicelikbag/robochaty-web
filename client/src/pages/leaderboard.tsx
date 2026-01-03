@@ -68,7 +68,7 @@ export default function Leaderboard() {
 
             <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
               <span className="bg-gradient-to-r from-primary via-white to-accent bg-clip-text text-transparent">
-                TOP INFLUENCERS
+                TOP CREATORS
               </span>
             </h1>
             <p className="text-muted-foreground text-lg">
