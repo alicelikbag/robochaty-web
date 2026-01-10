@@ -26,14 +26,6 @@ const teamMembers = [
     github: "kurkilyas",
   },
   {
-    id: 3,
-    name: "Sektor7k",
-    role: "Software Developer",
-    image: "/team1.jpeg",
-    gradient: "from-primary/80 to-secondary/80",
-    github: "sektor7k",
-  },
-  {
     id: 4,
     name: "Tarık Akay",
     role: "Social Media Manager",
